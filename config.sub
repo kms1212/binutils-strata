@@ -155,7 +155,8 @@ case $1 in
 			| storm-chaos* \
 			| uclinux-gnu* \
 			| uclinux-uclibc* \
-			| windows-* )
+			| windows-* \
+			| strata-* )
 				basic_machine=$field1
 				basic_os=$maybe_os
 				;;
@@ -1526,6 +1527,10 @@ EOF
 		kernel=linux
 		os=`echo "$basic_os" | sed -e 's|linux|gnu|'`
 		;;
+	strata*)
+		kernel=strata
+		os=`echo "$basic_os" | sed -e 's|strata|folios|'`
+		;;
 	managarm*)
 		kernel=managarm
 		os=`echo "$basic_os" | sed -e 's|managarm|mlibc|'`
@@ -2005,6 +2010,7 @@ case $os in
 	| emx* \
 	| es* \
 	| fiwix* \
+	| folios* \
 	| freebsd* \
 	| fuchsia* \
 	| genix* \
@@ -2211,6 +2217,8 @@ case $kernel-$os-$obj in
 	linux-gnu*- | linux-android*- | linux-dietlibc*- | linux-llvm*- \
 		    | linux-mlibc*- | linux-musl*- | linux-newlib*- \
 		    | linux-relibc*- | linux-uclibc*- | linux-ohos*- )
+		;;
+	strata-folios*- )
 		;;
 	uclinux-uclibc*- | uclinux-gnu*- )
 		;;
