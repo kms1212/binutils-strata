@@ -392,9 +392,9 @@ i[3-7]86-*-solaris*)	targ_emul=elf_i386_ldso
 			targ_extra_emuls="elf_i386"
 			targ_extra_libpath=$targ_extra_emuls
 			;;
-i[3-7]86-*-strata*)
-			targ_emul=elf_i386_strata
-			targ_extra_emuls=elf_x86_64
+i[3-7]86-*-strata*-folios*)
+			targ_emul=elf_i386_folios
+			targ_extra_emuls="elf_i386 elf_x86_64_folios"
 			;;
 i[3-7]86-*-netbsd* | \
 i[3-7]86-*-netbsd*-gnu* | \
@@ -1028,9 +1028,9 @@ x86_64-*-solaris2*)	targ_emul=elf_x86_64_sol2
 			targ_extra_libpath=$targ_extra_emuls
 			tdir_elf_i386=`echo ${targ_alias} | sed -e 's/x86_64/i386/'`
 			;;
-x86_64-*-strata*)
-			targ_emul=elf_x86_64
-			targ_extra_emuls=elf_i386_strata
+x86_64-*-strata*-folios*)
+			targ_emul=elf_x86_64_folios
+			targ_extra_emuls="elf_x86_64 elf_i386_folios"
 			;;
 x86_64-*-netbsd* | x86_64-*-openbsd*)
 			targ_emul=elf_x86_64

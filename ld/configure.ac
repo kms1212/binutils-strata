@@ -778,6 +778,7 @@ case "$target_vendor" in
 esac
 
 case "$target_os" in
+  folios) EXTRA_SHLIB_EXTENSION=".dl" ;;
   lynxos) EXTRA_SHLIB_EXTENSION=".a" ;;
 esac
 
