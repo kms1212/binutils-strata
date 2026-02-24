@@ -1701,6 +1701,39 @@ _bfd_elf_merge_symbol (bfd *abfd,
 	   && (oldbfd->flags & BFD_PLUGIN) != 0
 	   && (abfd->flags & BFD_PLUGIN) == 0))
     {
+	  /* skip if the multiple definition is caused by same file */
+	  bool same_file = false;
+
+	  if (oldbfd == abfd && oldbfd != NULL)
+	    {
+		  same_file = true;
+		}
+	  else if (oldbfd != NULL && abfd != NULL)
+	    {
+		  struct stat st_old, st_new;
+
+		  if (stat (oldbfd->filename, &st_old) == 0 
+			  && stat (abfd->filename, &st_new) == 0)
+	    	{
+	    	  if (st_old.st_dev == st_new.st_dev
+				  && st_old.st_ino == st_new.st_ino)
+				same_file = true;
+	    	}
+		  else
+		    {
+			  if (oldbfd->filename != NULL && abfd->filename != NULL
+				  && strcmp(oldbfd->filename, abfd->filename) == 0)
+				same_file = true;
+			}
+		}
+
+	
+	  if (same_file)
+	    {
+		  *skip = true;
+		  return true;
+		}
+
       /* Handle a multiple definition.  */
       (*info->callbacks->multiple_definition) (info, &h->root,
 					       abfd, sec, *pvalue);
