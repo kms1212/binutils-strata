@@ -347,7 +347,7 @@ ldelf_try_needed (struct dt_needed *needed, int force, int is_linux)
 	      struct bfd_link_needed_list *l;
 
 	      for (l = needs; l != NULL; l = l->next)
-		if (startswith (l->name, "libc.so"))
+		if (startswith (l->name, "libc.dl"))
 		  break;
 	      if (l == NULL)
 		{

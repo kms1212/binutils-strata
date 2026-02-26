@@ -911,7 +911,7 @@ const Target::Target_info Target_i386::i386_info =
   true,			// is_default_stack_executable
   true,			// can_icf_inline_merge_sections
   '\0',			// wrap_char
-  "/usr/lib/libc.so.1",	// dynamic_linker
+  "/usr/lib/libc.dl.1",	// dynamic_linker
   0x08048000,		// default_text_segment_address
   0x1000,		// abi_pagesize (overridable by -z max-page-size)
   0x1000,		// common_pagesize (overridable by -z common-page-size)
@@ -4427,7 +4427,7 @@ const Target::Target_info Target_iamcu::iamcu_info =
   true,			// is_default_stack_executable
   true,			// can_icf_inline_merge_sections
   '\0',			// wrap_char
-  "/usr/lib/libc.so.1",	// dynamic_linker
+  "/usr/lib/libc.dl.1",	// dynamic_linker
   0x08048000,		// default_text_segment_address
   0x1000,		// abi_pagesize (overridable by -z max-page-size)
   0x1000,		// common_pagesize (overridable by -z common-page-size)

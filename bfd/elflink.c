@@ -2342,7 +2342,7 @@ elf_link_add_glibc_verneed (struct elf_find_verdep_info *rinfo,
        t = t->vn_nextref)
     {
       const char *soname = bfd_elf_get_dt_soname (t->vn_bfd);
-      if (soname != NULL && startswith (soname, "libc.so."))
+      if (soname != NULL && startswith (soname, "libc.dl."))
 	break;
     }
 

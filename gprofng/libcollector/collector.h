@@ -32,7 +32,7 @@
 #define CALL_REAL(x)	(__real_##x)
 #define NULL_PTR(x)	(__real_##x == NULL)
 
-#define SYS_LIBC_NAME   "libc.so.6"
+#define SYS_LIBC_NAME   "libc.dl.6"
 
 #ifdef __has_attribute
 #if __has_attribute (__symver__)

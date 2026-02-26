@@ -25,9 +25,9 @@
 /* The name of the dynamic interpreter.  This is put in the .interp
    section.  */
 
-#define ELF32_DYNAMIC_INTERPRETER "/usr/lib/libc.so.1"
-#define ELF64_DYNAMIC_INTERPRETER "/lib/ld64.so.1"
-#define ELFX32_DYNAMIC_INTERPRETER "/lib/ldx32.so.1"
+#define ELF32_DYNAMIC_INTERPRETER "/usr/lib/libc.dl.1"
+#define ELF64_DYNAMIC_INTERPRETER "/lib/ld64.dl.1"
+#define ELFX32_DYNAMIC_INTERPRETER "/lib/ldx32.dl.1"
 
 bool
 _bfd_x86_elf_mkobject (bfd *abfd)
